@@ -1,0 +1,125 @@
+GET http://localhost:10001/movies/
+Accept: application/json
+
+###
+
+GET http://localhost:10001/movies/3
+Accept: application/json
+
+[
+    {
+        "genre": {
+            "id": 17,
+            "name": "Вестерн"
+        },
+        "year": 1978,
+        "description": "События происходят в конце XIX века на Диком Западе, в Америке. В основе сюжета — сложные перипетии жизни работяги — старателя Габриэля Конроя. Найдя нефть на своем участке, он познает и счастье, и разочарование, и опасность, и отчаяние...",
+        "trailer": "https://www.youtube.com/watch?v=hLA5631F-jo",
+        "rating": 6.0,
+        "genre_id": 17,
+        "id": 3,
+        "title": "Вооружен и очень опасен",
+        "director": {
+            "id": 3,
+            "name": "Владимир Вайншток"
+        },
+        "director_id": 3
+    }
+]
+
+###
+
+GET http://localhost:10001/movies/?director_id=15
+Accept: application/json
+
+[
+    {
+        "genre": {
+            "id": 7,
+            "name": "Фантастика"
+        },
+        "year": 2001,
+        "description": "К своим 16 годам старшеклассник Донни уже знает, что такое смерть. После несчастного случая, едва не стоившего ему жизни, Донни открывает в себе способности изменять время и судьбу. Произошедшие с ним перемены пугают его окружение — родителей, сестер, учителей, друзей и любимую девушку.",
+        "trailer": "https://www.youtube.com/watch?v=9H_t5cdszFU",
+        "rating": 8.0,
+        "genre_id": 7,
+        "id": 17,
+        "title": "Донни Дарко",
+        "director": {
+            "id": 15,
+            "name": "Ричард Келли"
+        },
+        "director_id": 15
+    }
+]
+
+###
+
+GET http://localhost:10001/movies?genre_id=16
+Accept: application/json
+
+
+###
+
+GET http://localhost:10001/movies?year=2021
+Accept: application/json
+
+
+###
+DELETE http://localhost:10001/movies/3
+Content-Type: application/json
+
+###
+
+PUT http://localhost:10001/movies/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "user": "Thomas",
+  "rating": 5,
+  "book_id": 1
+}
+
+###
+
+POST http://localhost:10001/movies/
+Content-Type: application/json
+
+{
+  "user": "Thomas",
+  "rating": 15,
+  "book_id": 133
+}
+
+
+###
+
+GET http://127.0.0.1:5000/genres/
+
+###
+
+GET http://127.0.0.1:5000/genres/3
+
+[
+    {
+        "id": 3,
+        "name": "Фэнтези"
+    }
+]
+
+###
+
+GET http://127.0.0.1:5000/directors/
+
+
+###
+
+GET http://127.0.0.1:5000/directors/3
+
+[
+    {
+        "id": 3,
+        "name": "Владимир Вайншток"
+    }
+]
